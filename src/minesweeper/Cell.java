@@ -5,8 +5,11 @@ public class Cell {
 	private boolean isBomb = false;
 	private int surroundingBombs = 0;
 	private static String defaultCell = "[ ]";
-	private String closed = "[ ]";
-	private String open = "[ ]";
+//	private String closed = "[ ]";
+//	private String open = "[ ]";
+	boolean isOpen = false;
+	
+	public String visual = "[ ]";
 	
 	//constructor
 	public Cell(int[] location) {
@@ -37,24 +40,28 @@ public class Cell {
 		return defaultCell;
 	}
 
-	public String getClosed() {
-		return closed;
-	}
-
-	public String getOpen() {
-		return open;
-	}
-
-	public void setOpen(String open) {
-		this.open = open;
-	}
-	
-	
-	
-	//default Cell string --> make property
-//	public static String defaultCell() {
-//		return "[ ]";
+//	public String getClosed() {
+//		return closed;
 //	}
+//
+//	public String getOpen() {
+//		return open;
+//	}
+//
+//	public void setOpen(String open) {
+//		this.open = open;
+//	}
+
+
+	public void setVisual(String visual) {
+		this.visual = visual;
+	}
+	
+	// method that opens cell ad changes their visual for the re-print of grid
+	public void open() {
+		this.isOpen = true;
+		this.setVisual("[o]");
+	}
 	
 	
 }

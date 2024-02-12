@@ -1,6 +1,7 @@
 package minesweeper;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class Game {
@@ -72,7 +73,12 @@ public class Game {
 		ArrayList<Integer> indexesList = new ArrayList<Integer>();
 		for (int i = 0; i < 100; i++) indexesList.add(i);
 		Collections.shuffle(indexesList);
-		for (int i = 0; i < 10; i++) cellsArr[indexesList.get(i)].setBomb(true);
+		for (int i = 0; i < 10; i++) {
+			cellsArr[indexesList.get(i)].setBomb(true);
+//			cellsArr[indexesList.get(i)].setVisual("[*]");
+//			System.out.println(cellsArr[indexesList.get(i)].visual);
+//			System.out.println(indexesList.get(i));
+		}
 	}
 	
 	//increments open cells prop

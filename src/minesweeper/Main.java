@@ -15,22 +15,25 @@ public class Main {
 		
 		Game.setBombs();
 		
+		Scanner scan = new Scanner(System.in);
 		//while loop
 		while (Game.isOver == false && Game.openCells < 90) {
-			Scanner scan = new Scanner(System.in);
+			
 			System.out.println("Please enter x coordinate");
 			int userXCoord = scan.nextInt();
 			System.out.println("Please enter y coordinate");
 			int userYCoord = scan.nextInt();
 			int[] userGuess = new int[] {userXCoord, userYCoord};
 			
+			
+			
 			for (Cell cell : Game.cellsArr) {
 				//System.out.println("in for loop");
 				//System.out.println(Arrays.toString(cell.location));
 				//System.out.println(Arrays.toString(userGuess));
 				if (Arrays.equals(cell.location, userGuess)) {
-					System.out.println("guesss and lloca euals");
-					System.out.println(cell.isBomb());
+//					System.out.println("guesss and lloca euals");
+//					System.out.println(cell.isBomb());
 					if (cell.isBomb() == true) {
 						System.out.println("BOOM!");
 						Game.isOver = true;
@@ -38,10 +41,12 @@ public class Main {
 					} else {
 						//open the cell
 						//increment open cells
+						cell.open();
 						Game.incrementOpenCells();
 						System.out.println("not bomb");
 						System.out.println(Game.openCells);
 						//print new grid to screen
+						Grid.printUpdatedGrid();
 					}
 				}
 			}
@@ -56,9 +61,9 @@ public class Main {
 			System.out.println("You win!");
 		}
 		
-		System.out.println("Want to play again?");
-		
-		
+		//System.out.println("Want to play again?");
+		// make a way to start loop again; toggle things back to game start?
+		scan.close();
 	}
 
 }
