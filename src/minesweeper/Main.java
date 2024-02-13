@@ -14,6 +14,10 @@ public class Main {
 		//System.out.println(Arrays.toString(Game.cellsArr[0])); returns Cell object
 		
 		Game.setBombs();
+		//calculate surrounding bombs of every cell
+		for (Cell cell : Game.cellsArr) {
+			cell.calculateSurroundingBombs();
+		}
 		
 		Scanner scan = new Scanner(System.in);
 		//while loop
@@ -32,7 +36,7 @@ public class Main {
 				//System.out.println(Arrays.toString(cell.location));
 				//System.out.println(Arrays.toString(userGuess));
 				if (Arrays.equals(cell.location, userGuess)) {
-//					System.out.println("guesss and lloca euals");
+//					System.out.println("guesss and loca equals");
 //					System.out.println(cell.isBomb());
 					if (cell.isBomb() == true) {
 						System.out.println("BOOM!");
@@ -43,8 +47,8 @@ public class Main {
 						//increment open cells
 						cell.open();
 						Game.incrementOpenCells();
-						System.out.println("not bomb");
-						System.out.println(Game.openCells);
+//						System.out.println("not bomb");
+//						System.out.println(Game.openCells);
 						//print new grid to screen
 						Grid.printUpdatedGrid();
 					}

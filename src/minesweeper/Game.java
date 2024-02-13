@@ -62,7 +62,7 @@ public class Game {
 	protected static void createCells() {
 		Cell[] cellsArr = new Cell[rows * columns];
 		for (int i = 0; i < rows * columns; i++) {
-			cellsArr[i] = new Cell(locationsArr[i]);
+			cellsArr[i] = new Cell(locationsArr[i], i);
 		}
 		setCellsArr(cellsArr);
 	}
