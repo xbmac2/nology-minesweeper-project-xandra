@@ -5,10 +5,8 @@ import java.util.Arrays;
 public class Grid {
 	public static String gridTopCoords = "    1  2  3  4  5  6  7  8  9  10  ";
 	public static int rows = 10;
-	public String defaultRow;
 	
 	
-	//prints 11 so fix this
 	public static void printDefaultRow() {
 		for (int i = 0; i < rows - 1; i++) {
 			System.out.print(Cell.getDefaultCell());
@@ -38,7 +36,7 @@ public class Grid {
 
 			System.out.print(i + 1 + "  ");
 
-			//how to get only 0 to 10 then only 10 -19
+			//print a row
 			Cell[] rowOfCells = Arrays.stream(Game.cellsArr, startInd, endInd).toArray(Cell[]::new);
 			for (Cell cell : rowOfCells) {
 				System.out.print(cell.visual);

@@ -13,34 +13,11 @@ public class Game {
 	public static int[][] locationsArr;
 	public static Cell[] cellsArr;
 	public static int openCells = 0;
-	
-	
-	// class constructor
-	public Game() {
-	}
 
 	//getters and setters
-	
-	
-//	public boolean isWon() {
-//		return isWon;
-//	}
-//
-//	public void setWon(boolean isWon) {
-//		Game.isWon = isWon;
-//	}
-	
-//	public static int[][] getLocationsArr() {
-//		return locationsArr;
-//	}
-
 	public static void setLocationsArr(int[][] locationsArr) {
 		Game.locationsArr = locationsArr;
 	}
-	
-//	public static Cell[] getCellsArr() {
-//		return cellsArr;
-//	}
 
 	public static void setCellsArr(Cell[] cellsArr) {
 		Game.cellsArr = cellsArr;
@@ -75,9 +52,6 @@ public class Game {
 		Collections.shuffle(indexesList);
 		for (int i = 0; i < 10; i++) {
 			cellsArr[indexesList.get(i)].setBomb(true);
-//			cellsArr[indexesList.get(i)].setVisual("[*]");
-//			System.out.println(cellsArr[indexesList.get(i)].visual);
-//			System.out.println(indexesList.get(i));
 		}
 	}
 	
