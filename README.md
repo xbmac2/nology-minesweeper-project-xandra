@@ -10,3 +10,8 @@ A simplified game of Minesweeper played in the Java console.
 - The corresponding cell on the grid is opened, and the grid is re-rendered with the number of mines surrounding that cell revealed
 - Open all ninety cells that do not contain a mine to win
 - Opening a cell with a mine results in Game Over immediately
+<p>&nbsp;</p>
+
+![minesweeper screenshot1](./screenshots/minesweeper-screenshot-1.png)
+![minesweeper screenshot2](./screenshots/minesweeper-screenshot-2.png)
+![minesweeper screenshot3](./screenshots/minesweeper-screenshot-3.png)
