@@ -18,7 +18,7 @@ public class Main {
 		}
 		
 		Scanner scan = new Scanner(System.in);
-		//while loop
+		
 		while (Game.isOver == false && Game.openCells < 90) {
 
 			System.out.println("Please enter x coordinate");

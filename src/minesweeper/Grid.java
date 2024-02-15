@@ -3,8 +3,8 @@ package minesweeper;
 import java.util.Arrays;
 
 public class Grid {
-	public static String gridTopCoords = "    1  2  3  4  5  6  7  8  9  10  ";
-	public static int rows = 10;
+	private static String gridTopCoords = "    1  2  3  4  5  6  7  8  9  10  ";
+	private static int rows = 10;
 	
 	
 	public static void printDefaultRow() {

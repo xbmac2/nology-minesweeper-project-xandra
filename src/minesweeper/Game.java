@@ -5,14 +5,13 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Game {
-	//protected static boolean isWon = false;
 	protected static boolean isOver = false;
-	public static int rows = 10;
-	public static int columns = 10;
-	public static int bombs = 10;
-	public static int[][] locationsArr;
-	public static Cell[] cellsArr;
-	public static int openCells = 0;
+	private static int rows = 10;
+	private static int columns = 10;
+	private static int bombs = 10;
+	protected static int[][] locationsArr;
+	protected static Cell[] cellsArr;
+	protected static int openCells = 0;
 
 	//getters and setters
 	public static void setLocationsArr(int[][] locationsArr) {
@@ -21,6 +20,14 @@ public class Game {
 
 	public static void setCellsArr(Cell[] cellsArr) {
 		Game.cellsArr = cellsArr;
+	}
+
+	public static int getRows() {
+		return rows;
+	}
+
+	public static int getColumns() {
+		return columns;
 	}
 
 	//setup, give Game class property that is an array of all cell locations
@@ -50,12 +57,12 @@ public class Game {
 		ArrayList<Integer> indexesList = new ArrayList<Integer>();
 		for (int i = 0; i < 100; i++) indexesList.add(i);
 		Collections.shuffle(indexesList);
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < Game.bombs; i++) {
 			cellsArr[indexesList.get(i)].setBomb(true);
 		}
 	}
 	
-	//increments open cells prop
+	//increments open cells
 	protected static void incrementOpenCells() {
 		Game.openCells += 1;
 	}

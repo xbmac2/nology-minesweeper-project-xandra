@@ -3,13 +3,12 @@ package minesweeper;
 import java.util.ArrayList;
 
 public class Cell {
-	public int[] location;
-	public int index;
+	protected int[] location;
+	private int index;
 	private boolean isBomb = false;
 	private int surroundingBombs = 0;
 	private static String defaultCell = "[ ]";
 	boolean isOpen = false;
-	
 	public String visual = "[ ]";
 	
 	//constructor
@@ -26,7 +25,6 @@ public class Cell {
 	public int[] getLocation() {
 		return location;
 	}
-
 
 	public void setLocation(int[] location) {
 		this.location = location;
@@ -56,7 +54,6 @@ public class Cell {
 	public void open() {
 		this.isOpen = true;
 		String numberedVisual = String.format("[%s]", this.surroundingBombs);
-		//this.setVisual("[o]");
 		this.setVisual(numberedVisual);
 	}	
 	
